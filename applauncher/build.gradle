@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.library'
+}
+
+ext.pluginVersionCode = 4
+ext.pluginVersionName = "1.1.2"
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 31
+        versionCode pluginVersionCode
+        versionName pluginVersionName
+    }
+
+    libraryVariants.all { variant ->
+        variant.outputs.all { output ->
+            output.outputFileName = "applauncher.$pluginVersionName.${variant.name}.aar"
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    compileOnly fileTree(dir: 'libs', include: ['godot-lib.4.0.1.stable.template_release.aar'])
+}
