@@ -1,0 +1,183 @@
+[gd_scene load_steps=6 format=3 uid="uid://blygo0fvtelim"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_3ju5r"]
+[ext_resource type="Texture2D" uid="uid://bvg518jtm2g8j" path="res://src/assets/icon/icon.png" id="2_ky61y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1axb"]
+bg_color = Color(0, 0, 0, 0.745098)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j82ls"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="Theme" id="Theme_x5p2m"]
+Button/styles/disabled = SubResource("StyleBoxFlat_o1axb")
+Button/styles/focus = SubResource("StyleBoxFlat_o1axb")
+Button/styles/hover = SubResource("StyleBoxFlat_j82ls")
+Button/styles/normal = SubResource("StyleBoxFlat_o1axb")
+Button/styles/pressed = SubResource("StyleBoxFlat_o1axb")
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ju5r")
+
+[node name="test" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="orb" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.5
+offset_top = -428.5
+offset_right = 428.5
+offset_bottom = 428.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ky61y")
+expand_mode = 1
+
+[node name="orblets" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="orblet0" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 704.0
+offset_right = 153.0
+offset_bottom = 815.0
+theme = SubResource("Theme_x5p2m")
+text = "1"
+
+[node name="orblet1" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 576.0
+offset_right = 185.0
+offset_bottom = 687.0
+theme = SubResource("Theme_x5p2m")
+text = "2
+"
+
+[node name="orblet2" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 480.0
+offset_right = 281.0
+offset_bottom = 591.0
+theme = SubResource("Theme_x5p2m")
+text = "3"
+
+[node name="orblet3" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 448.0
+offset_right = 417.0
+offset_bottom = 559.0
+theme = SubResource("Theme_x5p2m")
+text = "4"
+
+[node name="orblet4" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 480.0
+offset_right = 545.0
+offset_bottom = 591.0
+theme = SubResource("Theme_x5p2m")
+text = "5"
+
+[node name="orblet5" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 576.0
+offset_right = 649.0
+offset_bottom = 687.0
+theme = SubResource("Theme_x5p2m")
+text = "6"
+
+[node name="orblet6" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 704.0
+offset_right = 673.0
+offset_bottom = 815.0
+theme = SubResource("Theme_x5p2m")
+text = "7"
+
+[node name="orblet7" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 832.0
+offset_right = 641.0
+offset_bottom = 943.0
+theme = SubResource("Theme_x5p2m")
+text = "8"
+
+[node name="orblet8" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 928.0
+offset_right = 545.0
+offset_bottom = 1039.0
+theme = SubResource("Theme_x5p2m")
+text = "9"
+
+[node name="orblet9" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 960.0
+offset_right = 417.0
+offset_bottom = 1071.0
+theme = SubResource("Theme_x5p2m")
+text = "10"
+
+[node name="orblet10" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 928.0
+offset_right = 281.0
+offset_bottom = 1039.0
+theme = SubResource("Theme_x5p2m")
+text = "11"
+
+[node name="orblet11" type="Button" parent="orblets"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 832.0
+offset_right = 185.0
+offset_bottom = 943.0
+theme = SubResource("Theme_x5p2m")
+text = "12"
+
+[connection signal="gui_input" from="orb" to="." method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="orblets/orblet0" to="." method="_on_orblet_mouse_entered" binds= [0]]
+[connection signal="mouse_entered" from="orblets/orblet1" to="." method="_on_orblet_mouse_entered" binds= [1]]
+[connection signal="mouse_entered" from="orblets/orblet2" to="." method="_on_orblet_mouse_entered" binds= [2]]
+[connection signal="mouse_entered" from="orblets/orblet3" to="." method="_on_orblet_mouse_entered" binds= [3]]
+[connection signal="mouse_entered" from="orblets/orblet4" to="." method="_on_orblet_mouse_entered" binds= [4]]
+[connection signal="mouse_entered" from="orblets/orblet5" to="." method="_on_orblet_mouse_entered" binds= [5]]
+[connection signal="mouse_entered" from="orblets/orblet6" to="." method="_on_orblet_mouse_entered" binds= [6]]
+[connection signal="mouse_entered" from="orblets/orblet7" to="." method="_on_orblet_mouse_entered" binds= [7]]
+[connection signal="mouse_entered" from="orblets/orblet8" to="." method="_on_orblet_mouse_entered" binds= [8]]
+[connection signal="mouse_entered" from="orblets/orblet9" to="." method="_on_orblet_mouse_entered" binds= [9]]
+[connection signal="mouse_entered" from="orblets/orblet10" to="." method="_on_orblet_mouse_entered" binds= [10]]
+[connection signal="mouse_entered" from="orblets/orblet11" to="." method="_on_orblet_mouse_entered" binds= [11]]

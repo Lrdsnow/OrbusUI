@@ -1,0 +1,5 @@
+[config]
+
+name="AppLauncher"
+binary_type="local"
+binary="applauncher.1.1.2.release.aar"
